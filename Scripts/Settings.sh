@@ -38,19 +38,19 @@ fi
 
 #高通平台锁定512M内存
 if [[ $WRT_TARGET == *"IPQ"* ]]; then
-	echo "CONFIG_IPQ_MEM_PROFILE_1024=n" >> ./.config
+	echo "CONFIG_IPQ_MEM_PROFILE_1024=y" >> ./.config
  	echo "CONFIG_IPQ_MEM_PROFILE_512=n" >> ./.config
 #	echo "CONFIG_IPQ_MEM_PROFILE_256=y" >> ./.config
 # 	echo "CONFIG_KERNEL_IPQ_MEM_PROFILE=256" >> ./.config
   	echo "CONFIG_NSS_MEM_PROFILE_LOW=y" >> ./.config
-	echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
+	echo "CONFIG_ATH11K_MEM_PROFILE_1G=y" >> ./.config
 	echo "CONFIG_ATH11K_MEM_PROFILE_512M=n" >> ./.config
 fi
 
 #科学插件设置
 if [[ $WRT_REPO == *"lede"* ]]; then
-	echo "CONFIG_PACKAGE_luci-app-openclash=n" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-passwall=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-passwall=n" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-ssr-plus=n" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-turboacc=y" >> ./.config
 else
